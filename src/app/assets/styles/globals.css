@@ -2,56 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 0, 0, 0;
-  --text-rgb: 255, 255, 255;
-}
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* styles/globals.css */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-} */
-
-@font-face {
-  font-family: 'euclid-circular-b-regular';
-  src: url('../fonts/euclid-circular-b-regular.ttf');
-}
-@font-face {
-  font-family: 'euclid-circular-b-light';
-  src: url('../fonts/euclid-circular-b-light.ttf');
-}
-
-@font-face {
-  font-family: 'glorify';
-  src: url('../fonts/Glorifydemo.otf');
-}
-
-@font-face {
-  font-family: 'exo-bold';
-  src: url('../fonts/exo-bold.ttf');
-}
-
-body {
-  font-family: 'euclid-circular-b-light';
-  background-color: rgb(var(--background-rgb));
-  color: rgb(var(--text-rgb));
-}
-
-h1 {
-  @apply text-5xl m-0 p-0;
-}
-
-h2 {
-  @apply text-4xl m-0 p-0;
-}
-
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  100% {
+    transform: translateX(-100%); /* Scroll the entire width of the container */
   }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite; /* 20 seconds, infinite loop */
 }
