@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles/globals.css */
+/* Keyframes for scrolling animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -12,6 +12,33 @@
   }
 }
 
+/* Apply scroll animation to the slider */
 .animate-scroll {
   animation: scroll 20s linear infinite; /* 20 seconds, infinite loop */
+}
+
+/* Apply pause on hover */
+.slider-container:hover .slider {
+  animation-play-state: paused; /* Pause the animation */
+}
+
+/* Hover effect for images */
+.slider li:hover {
+  z-index: 10;
+  transform: scale(1.1); /* Scaling the image on hover */
+  transition: transform 0.3s ease;
+}
+
+/* Ensure images fit without gaps */
+.slider {
+  display: flex; /* Ensure flexbox layout */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  gap: 0; /* Remove gaps between flex items */
+}
+
+.slider li {
+  flex-shrink: 0; /* Prevent shrinking of the list item */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
 }
